@@ -12,17 +12,20 @@
 		<Description>A lightweight ASP.NET Core middleware for IP-based request filtering. It allows whitelisting or blacklisting specific IP addresses with customizable error messages and logging.</Description>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageIcon>IpShieldIcon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/HamzaAudeh/IpShieldMiddleware</RepositoryUrl>
+		<PackageTags>IpWhitelist, IpWhitelisting, IpBlacklist, IpBlacklisting, Middleware</PackageTags>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Include="..\..\..\..\..\..\..\Downloads\IpShieldIcon.png">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	  <None Include="..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Include="..\..\..\..\..\..\..\Downloads\IpShieldIcon.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
