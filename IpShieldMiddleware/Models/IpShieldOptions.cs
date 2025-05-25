@@ -1,6 +1,6 @@
 ﻿namespace IpShieldMiddleware.Models;
 
-public class IpFilterOptions
+public class IpShieldOptions
 {
     /// <summary>
     /// A list of IPs that are allowed to access the application.

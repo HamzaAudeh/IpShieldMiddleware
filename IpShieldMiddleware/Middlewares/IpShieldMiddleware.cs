@@ -10,12 +10,12 @@ namespace IpShieldMiddleware.Middlewares;
 public class IpShieldMiddleware
 {
     private readonly RequestDelegate _next;
-    private readonly IpFilterOptions _options;
+    private readonly IpShieldOptions _options;
     private readonly ILogger<IpShieldMiddleware> _logger;
 
     public IpShieldMiddleware(
         RequestDelegate next,
-        IOptions<IpFilterOptions> options,
+        IOptions<IpShieldOptions> options,
         ILogger<IpShieldMiddleware> logger)
     {
         _next = next;
