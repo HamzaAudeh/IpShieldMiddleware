@@ -28,8 +28,8 @@ builder.Services.Configure<IpShieldOptions>(options =>
 {
     options.WhitelistedIps = new List<string> { "127.0.0.1", "::1" };
     options.BlacklistedIps = new List<string> { "192.168.1.100" };
-    options.DeniedMessageTemplate = "Access denied: '{ip}' is not allowed.";
-    options.LogMessageTemplate = "Blocked request from IP: {ip}";
+    options.CustomLogMessage = "This is a custom log message to log for ip: {IP}";
+    options.CustomErrorMessage = "This is a custom response message to log for ip: {IP}";
 });
 
 var app = builder.Build();
@@ -54,10 +54,3 @@ builder.Services.Configure<IpShieldOptions>(builder.Configuration.GetSection("Ip
 var app = builder.Build();
 app.UseIpShield();
 ```
-
-
-This middleware intercepts incoming HTTP requests and performs IP filtering based on the configured whitelist and blacklist:
-
--Requests from whitelisted IPs are allowed.
-
--Requests from blacklisted IPs are blocked, returning a response of 403 (Forbidden) with the default message in case no custom message was provided.
