@@ -28,8 +28,8 @@ builder.Services.Configure<IpShieldOptions>(options =>
 {
     options.WhitelistedIps = new List<string> { "127.0.0.1", "::1" };
     options.BlacklistedIps = new List<string> { "192.168.1.100" };
-    options.CustomLogMessage = "This is a custom log message to log for ip: {IP}";
-    options.CustomErrorMessage = "This is a custom response message to log for ip: {IP}";
+    options.CustomLogMessage = "This is a custom log message for ip: {IP}";
+    options.CustomErrorMessage = "This is a custom response message for ip: {IP}";
 });
 
 var app = builder.Build();
@@ -42,8 +42,8 @@ or if you want to keep configs in appsettings
 "IpShieldOptions": {
   "BlacklistedIps": [ "192.168.1.10" ],
   "WhitelistedIps": [ "127.0.0.1", "localhost", "::1" ],
-  "CustomLogMessage": "This is a custom log message to log for ip: {IP}",
-  "CustomErrorMessage": "This is a custom response message to log for ip: {IP}"
+  "CustomLogMessage": "This is a custom log message for ip: {IP}",
+  "CustomErrorMessage": "This is a custom response message for ip: {IP}"
 }
 ```
 
