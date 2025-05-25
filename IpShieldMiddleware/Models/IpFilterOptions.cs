@@ -13,12 +13,12 @@ public class IpFilterOptions
     public List<string> BlacklistedIps { get; set; } = new();
 
     /// <summary>
-    /// Optional custom message for denied IPs. Use `{ip}` as a placeholder.
+    /// Optional custom message for denied IPs. Use `{IP}` as a placeholder.
     /// </summary>
     public string? CustomErrorMessage { get; set; }
 
     /// <summary>
-    /// Optional custom log message template for denied IPs. Use `{ip}` as a placeholder.
+    /// Optional custom log message template for denied IPs. Use `{IP}` as a placeholder.
     /// </summary>
     public string? CustomLogMessage { get; set; }
 }

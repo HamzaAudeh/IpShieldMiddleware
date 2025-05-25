@@ -40,8 +40,8 @@ public class IpShieldMiddleware
 
         if (_options.WhitelistedIps.Any() && !_options.WhitelistedIps.Contains(remoteIp.ToString()))
         {
-            string responseMessage = BuildResponseMessage("Access denied: IP is not whitelisted.", ipString);
-            string logMessage = BuildLogMessage("Access denied: IP is not whitelisted.", ipString);
+            string responseMessage = BuildResponseMessage("Access denied: '{IP}' is not whitelisted.", ipString);
+            string logMessage = BuildLogMessage("Access denied: '{IP}' is not whitelisted.", ipString);
             _logger.LogWarning(logMessage);
             await DenyRequestAsync(context, responseMessage);
             return;
@@ -49,8 +49,8 @@ public class IpShieldMiddleware
 
         if (_options.BlacklistedIps.Contains(remoteIp.ToString()))
         {
-            string responseMessage = BuildResponseMessage("Access denied: IP is blacklisted.", ipString);
-            string logMessage = BuildLogMessage("Access denied: IP is blacklisted.", ipString);
+            string responseMessage = BuildResponseMessage("Access denied: '{IP}' is blacklisted.", ipString);
+            string logMessage = BuildLogMessage("Access denied: '{IP}' is blacklisted.", ipString);
             _logger.LogWarning(logMessage);
             await DenyRequestAsync(context, responseMessage);
             return;
@@ -70,7 +70,7 @@ public class IpShieldMiddleware
 
         if (!string.IsNullOrEmpty(ip))
         {
-            message = message.Replace("{ip}", ip);
+            message = message.Replace("{IP}", ip);
         }
 
         return message;
@@ -87,7 +87,7 @@ public class IpShieldMiddleware
 
         if (!string.IsNullOrEmpty(ip))
         {
-            message = message.Replace("{ip}", ip);
+            message = message.Replace("{IP}", ip);
         }
 
         return message;
