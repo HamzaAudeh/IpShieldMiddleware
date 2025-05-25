@@ -18,8 +18,9 @@ This middleware intercepts incoming HTTP requests and performs IP filtering base
 ---
 
 ## 📦 Installation
-
+```nuget
 dotnet add package IpShieldMiddleware
+```
 
 ## 🚀 Getting Started
 
